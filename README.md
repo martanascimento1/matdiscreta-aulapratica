@@ -1,6 +1,6 @@
 # Aula prática - Matemática Discreta
 
-# Grupo:
+## Grupo:
 
 Giovanna 
 
@@ -18,4 +18,6 @@ Silvia
 **Professor: Bruno Pimentel**
 
 ## Descrição
+
+Exercícios resolvidos com a linguagem C acerca dos conteúdos apresentados em sala de aula.
 
