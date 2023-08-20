@@ -2,13 +2,13 @@
 
 ## Grupo:
 
-Giovanna 
+*Giovanna Alves Barbosa de Oliveira*
 
-Marta
+*Marta Mirely Nascimento dos Santos*
 
-Paulo
+*Paulo Sérgio Veras Carvalho*
 
-Silvia
+*Silvia Michele Leite Teles*
 
 **IFAL - Instituto Federal de Educação, Ciência e Tecnológia de Alagoas**
 **Campus Arapiraca**
