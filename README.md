@@ -22,4 +22,6 @@ Exercícios resolvidos com a linguagem C acerca dos conteúdos apresentados em s
 
 
 **Lista de questões:**
+* [Questão 1]()
+* [Questão 2]()
 * [Questão 3](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/questao3.c)
