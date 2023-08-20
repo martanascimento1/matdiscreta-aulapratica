@@ -10,8 +10,7 @@
 
 *Silvia Michele Leite Teles*
 
-**IFAL - Instituto Federal de Educação, Ciência e Tecnológia de Alagoas**
-**Campus Arapiraca**
+**UFAL - Universidade Federal de Alagoas**
 
 **Curso: Engenharia de Computação**
 
