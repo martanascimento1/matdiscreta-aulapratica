@@ -24,4 +24,4 @@ Exercícios resolvidos com a linguagem C acerca dos conteúdos apresentados em s
 
 Escrever um programa que determina se um dado número inteiro é primo ou não.
 
-*.[https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/questao3.c]
+*.[Questão 1].(https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/questao3.c)
