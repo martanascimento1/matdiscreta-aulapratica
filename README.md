@@ -6,10 +6,14 @@
 **Campus Arapiraca**
 
 Giovanna 
+
 Marta
+
 Paulo
+
 Silvia
 
 **Curso: Engenharia de Computação**
+
 **Professor: Bruno Pimentel**
 
