@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void fatores_primos(int n) {
+void decompor(int n) {
     for (int i = 2; i <= n; i++) {
         while (n % i == 0) {
             printf("%d ", i);
@@ -11,12 +11,10 @@ void fatores_primos(int n) {
 
 int main() {
     int n;
-
-    printf("Digite um numero inteiro:\n");
     scanf("%d", &n);
 
-    printf("Os fatores primos de %d são: ", n);
-    fatores_primos(n);
+    printf("Fatores primos de %d: ", n);
+    decompor(n);
 
     return 0;
 }
