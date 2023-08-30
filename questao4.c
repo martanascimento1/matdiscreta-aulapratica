@@ -13,12 +13,10 @@ int mmc(int a, int b) {
 
 int main() {
     int a, b;
-
-    printf("Digite dois numeros inteiros:\n");
     scanf("%d%d", &a, &b);
 
-    printf("O MDC de %d e %d eh %d\n", a, b, mdc(a, b));
-    printf("O MMC de %d e %d eh %d\n", a, b, mmc(a, b));
+    printf("MDC %d:\n", mdc(a, b));
+    printf("MMC %d:\n", mmc(a, b));
 
     return 0;
 }
