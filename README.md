@@ -8,6 +8,8 @@
 
 *Paulo Sérgio Veras Carvalho*
 
+*Antônio Maria Cardoso Wagner*
+
 
 **UFAL - Universidade Federal de Alagoas**
 
