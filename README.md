@@ -8,7 +8,6 @@
 
 *Paulo Sérgio Veras Carvalho*
 
-*Silvia Michele Leite Teles*
 
 **UFAL - Universidade Federal de Alagoas**
 
