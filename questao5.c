@@ -11,7 +11,7 @@ int main(){
     int a, b;
     scanf("%d%d", &a, &b);
 
-    printf("MDC %d:\n", a, b, mdc(a, b));
+    printf("MDC : %d\n", mdc(a, b));
 
     return 0;
 }
