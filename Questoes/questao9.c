@@ -32,8 +32,16 @@ int mdc(int a, int b) {
 }
 
 int main() {
-    int b1, m1;
+    int b1, m1; //congruência 1
+    int b2, m2; //congruência 2
+    int b3, m3; //congruência 3
 
+    int M1, M2, M3;
+
+    int c1, c2, c3;
+
+
+    //CONGRUÊNCIA 1
     printf(" Congruência 1:\n");
 
     printf("insira o valor de b: ");
@@ -41,9 +49,8 @@ int main() {
 
     printf("insira o valor de m: ");
     scanf("%d", &m1);
-
-    int b2, m2;
-
+    
+    //CONGRUÊNCIA 2
     printf(" Congruência 2:\n");
 
     printf("insira valor de b: ");
@@ -52,8 +59,7 @@ int main() {
     printf("insira o valor de m: ");
     scanf("%d", &m2);
 
-    int b3, m3;
-
+    //CONGRUÊNCIA 3
     printf("Congruência 3 :\n");
 
     printf("insira o valor de b: ");
@@ -62,20 +68,19 @@ int main() {
     printf("insira o valor de m: ");
     scanf("%d", &m3);
 
-    int M1, M2, M3;
 
     M1 = m2 * m3;
     M2 = m1 * m3;
     M3 = m1 * m2;
-
-    int c1, c2, c3;
-
+   
+    //VERIFICA QUAL O MAIOR NUMERO PARA ORGANIZAR O MDC
     if (M1 >= m1) {
         c1 = mdc(M1, m1);
     } else {
         c1 = mdc(m1, M1);
     }
 
+    //SE NÃO FOREM COPRIMOS, NÃO EXISTE SOLUÇÃO
     if (c1 != 1) {
         printf("O sistema não possui solução!\n");
     } else {
@@ -91,30 +96,33 @@ int main() {
             c3 = 1;
 
             int s1, t1;
+            int s2, t2;
+            int s3, t3;
+
+            int x1;
+            int x2;
+            int x3;
+
+            int x;
 
             s1 = 1;
             t1 = -M1 / m1;
 
-            int x1;
-            x1 = b1 * M1 * coeficientes(M1, m1, m1, M1 % m1, 0, 1, s1, t1, c1);
-
-            int s2, t2;
+            
+            x1 = b1 * M1 * coeficientes(M1, m1, m1, M1 % m1, 0, 1, s1, t1, c1); 
 
             s2 = 1;
             t2 = -M2 / m2;
 
-            int x2;
+            
             x2 = b2 * M2 * coeficientes(M2, m2, m2, M2 % m2, 0, 1, s2, t2, c2);
-
-            int s3, t3;
 
             s3 = 1;
             t3 = -M3 / m3;
 
-            int x3;
+            
             x3 = b3 * M3 * coeficientes(M3, m3, m3, M3 % m3, 0, 1, s3, t3, c3);
 
-            int x;
             x = x1 + x2 + x3;
 
             x = solucao(x, m1 * m2 * m3);
