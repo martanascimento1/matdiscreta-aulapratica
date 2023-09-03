@@ -1,59 +1,49 @@
 #include <stdio.h>
 
-int calcularValores(int x, int y, int m, int n, int p, int q, int r, int s, int t)
-{
-    if (p * x + q * y == t)
-    {
-        printf("O valor r é %d\n", p);
-        printf("O valor s é %d\n", q);
+int combinacao(int a, int b, int a1, int b1, int x, int y, int s, int t, int c) {
+    if (s * a + t * b == c) {
+        printf("O coeficiente s é %d\n", s);
+        printf("O coeficiente t é %d\n", t);
 
         return 0;
-    }
-    else
-    {
-        int rn, sn;
+    } else {
+        int sn, tn;
 
-        rn = m - (n / p) * r;
-        sn = y - (n / p) * s;
+        sn = x - (a1 / b1) * s;
+        tn = y - (a1 / b1) * t;
 
-        calcularValores(x, y, n, m % n, p, q, rn, sn, t);
+        combinacao(a, b, b1, a1 % b1, s, t, sn, tn, c);
     }
 }
 
-int calcularMDC(int x, int y)
-{
-    if (x % y == 0)
-    {
-        return y;
-    }
-    else
-    {
-        calcularMDC(y, x % y);
+int mdc(int a, int b) {
+    if (a % b == 0) {
+        return b;
+    } else {
+        mdc(b, a % b);
     }
 }
 
-int main()
-{
-    int x, y, t;
-    int r, s;
+int main() {
+    int a, b, c;
+    int s, t;
 
-    printf("mdc (x, y) = r*x + s*y\n");
+    printf("insira o valor de a: ");
+    scanf("%d", &a);
 
-    printf("Digite o valor de x: ");
-    scanf("%d", &x);
+    printf("insira o valor de b: ");
+    scanf("%d", &b);
 
-    printf("Digite o valor de y: ");
-    scanf("%d", &y);
+    s = 1;
+    t = -a / b;
 
-    r = 1;
-    s = -x / y;
-
-    if (x >= y)
-    {
-        t = calcularMDC(x, y);
+    if (a >= b) {
+        c = mdc(a, b);
+    } else {
+        c = mdc(b, a);
     }
-    else
-    {
-       // t =
-    }
+
+    combinacao(a, b, b, a % b, 0, 1, s, t, c);
+
+    return 0;
 }
