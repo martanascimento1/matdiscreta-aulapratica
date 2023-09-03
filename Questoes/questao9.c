@@ -121,7 +121,7 @@ int main() {
 
             printf("A solução do sistema é %d\n", x);
         }
-    }
+     }
 
     return 0;
 }
