@@ -1,4 +1,4 @@
-# Aula prática - Matemática Discreta
+# Matemática Discreta
 
 ## Grupo:
 
