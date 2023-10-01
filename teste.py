@@ -1,5 +1,6 @@
 from tkinter import*
-
+from tkinter.ttk import *
+from tkinter import messagebox
 janela = Tk ()
 janela.title ("Criptografia RSA - Matematica Discreta")
 janela.geometry('700x400')

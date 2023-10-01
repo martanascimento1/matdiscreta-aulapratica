@@ -1,55 +1,57 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QLineEdit, QFrame, QVBoxLayout, QLabel
-import sys
-from PySide6.QtCore import QSize
-import PySide6.QtCore
-
-class janela(QMainWindow):
-    def init(self):
-        super().init()
-
-        self.setWindowTitle("QlineEDIT")
-        self.setFixedSize(QSize(300, 200))
-
-        self.input = QLineEdit()
-        self.input2 = QLineEdit()
-        self.lb1 = QLabel("email")
-        self.lb2 = QLabel(("senha"))
-        self.lb3 = QLabel((""))
-        
-        self.email = "blablabls"
-        self.senha = "2003"
-        
-        self.layout = QVBoxLayout()
-        self.button = QPushButton("Login")
-        
-        self.layout.addWidget(self.lb1)
-        self.layout.addWidget(self.input)
-        self.layout.addWidget(self.lb2)
-        self.layout.addWidget(self.input2)
-        self.layout.addWidget(self.button)
-        self.layout.addWidget(self.lb3)
-        
-        self.container = QFrame()
-        
-        self.container.setLayout((self.layout))
-        
-        self.setCentralWidget(self.container)
-        self.button.clicked.connect(self.login)
-        
-        def login(self):
-            self.texto1 = self.input.text()
-            self.texto2 = self.input2.text()
-            if self.button:
-                if self.texto1 == self.email and self.texto2 == self.senha:
-                    self.lb3.setText("tudo ok")
-                else:
-                    self.lb3.setText("error404")
-                    
-app = QApplication(sys.argv)
-obj = janela()
-obj.show()
-app.exec()
-
-            
+from tkinter import *
+from tkinter.ttk import *
+from tkinter import messagebox
+ 
+def inserir():
+  p = txt_p.get()
+  q = txt_q.get()
+  
+  #if(usuario == "admin" and senha == "1234"):
+  #  messagebox.showinfo("Aviso", "Usuário e senha corretos")
+  #else:
+   # messagebox.showinfo("Aviso", "Usuário e senha não conferem")
+ 
+def main():
+  global inicial
+  global txt_p
+  global txt_q
+ 
+  # vamos criar a tela de login
+  inicial = Tk()
+ 
+  # vamos definir o tamanho da janela
+  inicial.geometry("260x120")
+ 
+  # o titulo da janela
+  inicial.title("Criptografia RSA")
+ 
+  # evitamos que a janela seja redimensionada
+  inicial.resizable(False, False)
+ 
+  # vamos configurar o grid
+  inicial.columnconfigure(0, weight=1)
+  inicial.columnconfigure(1, weight=3)
+ 
+  # nome do usuário
+  label_usuario = Label(inicial, text="Usuário:")
+  label_usuario.grid(column=0, row=0, sticky=W, padx=15, pady=10)
+  txt_p = Entry(inicial, width=28)
+  txt_p.grid(column=1, row=0, sticky=E, padx=15, pady=10)
+ 
+  # senha
+  label_senha = Label(inicial, text="Senha:")
+  label_senha.grid(column=0, row=1, sticky=W, padx=15, pady=0)
+  txt_q = Entry(inicial, show="*", width=28)
+  txt_q.grid(column=1, row=1, sticky=E, padx=15, pady=0)
+ 
+  # botão de login
+  btn_login = Button(inicial, text="Entrar", command=autenticar_usuario)
+  btn_login.grid(column=1, row=3, sticky=E, padx=15, pady=10)
+ 
+  # entramos no loop de eventos 
+  inicial.mainloop() 
+ 
+if __name__== "__main__":
+  main()           
         
         
