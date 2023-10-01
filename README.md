@@ -8,6 +8,8 @@
 
 *Marta Mirely Nascimento dos Santos*
 
+*Matheus Henrique Gomes de Oliveira*
+
 *Paulo Sérgio Veras Carvalho*
 
 *Vitória Maria Santana Bigi*
