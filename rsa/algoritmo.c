@@ -4,8 +4,11 @@
 #include <math.h>
 #include <string.h>
 
-#define MAX_FRASE 100
-letras[] = {' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+#define MAX_FRASE 10000
+
+//ATRIBUI ÀS LETRAS E CARACTERES SEUS VALORES DECIMAIS CORRESPONDENTES NA TABELA ASCII
+
+char letras[] = {' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                  ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
                  'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
                  'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
@@ -14,9 +17,12 @@ int numero_no_alfabeto[] = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 
                             82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103,
                             104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122};
 
+
+//DECLARANDO AS FUNÇÕES USADAS AO LONGO DO PROGRAMA                            
+
 long long int exponenciacao_modular_rapida(long long int base, long long int expoente, long long int mod);
 bool mdc(long long int a, long long int b);
-long long int calcular_chave_privada(long long int e, long long int lambda);
+long long int calcular_chave_privada(long long int e, long long int phi);
 bool ehPrimo(long long int p);
 void criptografar_mensagem(long long int frase_enumerada[], int tamanho, long long int frase_criptografada[], long long int e, long long int n);
 void reenumerar_frase(long long int frase_criptografada[], int tamanho, long long int new_frase_enumerada[], long long int e, long long int d, long long int n);
@@ -30,11 +36,8 @@ void entrada_numeros(long long int *num1, long long int *num2, long long int *ph
 void entrada_frase();
 void entrada();
 
-int main() 
-{
-    entrada();
-    return 0;
-}
+
+//FUNÇÃO PARA CALCULAR O MDC ENTRE (d*e) e (p-1)(q-1) USANDO O ALGORITMO DE EUCLIDES
 
 bool mdc(long long int a, long long int b) {
     while (b != 0) {
@@ -45,15 +48,17 @@ bool mdc(long long int a, long long int b) {
     return a == 1 ? true : false;
 }
 
-long long int calcular_chave_privada(long long int e, long long int lambda) {
-    long long int b_base = lambda, q, t;
+//FUNÇÃO PARA OBTER A CHAVE PRIVADA A PARTIR DO EXPOENTE "e", E DA FUNÇÃO TOTIENTE PHI
+
+long long int calcular_chave_privada(long long int e, long long int phi) {
+    long long int b_base = phi, q, t;
     long long int x0 = 0, chave_privada = 1;
 
-    if (lambda == 1) return 1;
+    if (phi == 1) return 1;
     while (e > 1) {
-        q = e / lambda;
-        t = lambda;
-        lambda = e % lambda;
+        q = e / phi;
+        t = phi;
+        phi = e % phi;
         e = t;
         t = x0;
         x0 = chave_privada - (q * x0);
@@ -65,6 +70,8 @@ long long int calcular_chave_privada(long long int e, long long int lambda) {
     } 
     return chave_privada;
 }
+
+//FUNÇÃO PARA VERIFICAR SE O NUMERO "p" É PRIMO, RETORNANDO TRUE SE O NÚMERO FOR PRIMO
 
 bool ehPrimo(long long int p) {
     long long int i;
@@ -81,12 +88,18 @@ bool ehPrimo(long long int p) {
     return true;
 }
 
+/*FUNÇÃO PARA CRIPTOGRAFAR UMA MENSAGEM REPRESENTADA COMO UMA SEQUENCIA DE NUMEROS, COM BASE NA CHAVE PUBLICA
+E ARMAZENA A MENSAGEM NO ARRAY FRASE_CRIPTOGRAFADA[]*/
+
 void criptografar_mensagem(long long int frase_enumerada[], int tamanho, long long int frase_criptografada[], long long int e, long long int n) {
     for (int i = 0; i < tamanho; i++) {                           
         long long int potencia_da_letra = exponenciacao_modular_rapida(frase_enumerada[i], e, n);     
         frase_criptografada[i] = potencia_da_letra;      
     }
 }
+
+/*FUNÇÃO PARA DESENCRIPTAR UMA MENSAGEM CRIPTOGRAFADA, REPRESENTADA COM UMA SEQUÊNCIA DE NÚMEROS, USANDO A CHAVE PRIVADA
+E ARMAZENA A MENSAGEM NO ARRAY NEW_FRASE_ENUMERADA[]*/
 
 void reenumerar_frase(long long int frase_criptografada[], int tamanho, long long int new_frase_enumerada[], long long int e, long long int d, long long int n) {
     int i;
@@ -95,6 +108,9 @@ void reenumerar_frase(long long int frase_criptografada[], int tamanho, long lon
         new_frase_enumerada[i] = potencia_da_letra;      
     }
 }
+
+
+/*FUNÇÕES AUXILIARES USADAS PARA ENCONTRAR O ÍNDICE DE UM CARACTERE OU NUMERO NA TABELA*/
 
 int letra_na_tabela(int tabela[], long long new[], long long int n, int j, int i) {
     if (new[i] == tabela[j]) {
@@ -113,6 +129,8 @@ int numero_na_tabela(char letras[], char frase[], int tam, int j, int i) {
     }
 }
 
+/*CONVERTE UMA MENSAGEM EM TEXTO LEGÍVEL PARA NÚMEROS, COM BASE NA TABELA ASCII*/
+
 void enumerar(char letras[], int tabela[], char frase[], long long int new_frase[], int n, int i) {
     if (i < n) {
         int pos;
@@ -121,6 +139,9 @@ void enumerar(char letras[], int tabela[], char frase[], long long int new_frase
         return enumerar(letras, tabela, frase, new_frase, n, i + 1);
     }
 }
+
+
+/*CONVERTE A MENSAGEM CRIPTOGRAFADA PARA TEXTO NORMAL*/
 
 void decifrar(char letras[], int tabela[], long long int new[], char novo_texto[], long long int n, int i) {
     if (i == n) {
@@ -137,6 +158,9 @@ void decifrar(char letras[], int tabela[], long long int new[], char novo_texto[
     }
     decifrar(letras, tabela, new, novo_texto, n, i + 1);
 }
+
+
+/*FUNÇÕES RESPONSÁVEIS PELA ENTRADA E SAÍDA DE DADOS RELACIONADOS À DESCRIPTOGRAFIA, INCLUINDO A CRIAÇÃO DE ARQUIVOS TXT*/
 
 void entrada_mensagem_descriptografada() {
     FILE *descrip;
@@ -211,6 +235,9 @@ void entrada_numeros(long long int *num1, long long int *num2, long long int *ph
     }
 }
 
+
+/*RESPONSÁVEL PELA ENTRADA DA MENSAGEM A SER CRIPTOGRAFADA, FAZ A CRIPTOGRAFIA E ARMAZENA A MENSAGEM CRIPTOGRAFADA EM UM ARQUIVO TXT*/
+
 void entrada_frase() {
     FILE *crip;
     crip = fopen("grifado.txt", "w");
@@ -249,6 +276,9 @@ void entrada_frase() {
     fclose(crip);
 }
 
+
+/*IMPLEMENTA A EXPONENCIAÇÃO MODULAR RÁPIDA, USADA PARA ENCRIPTAR E DESENCRIPTAR*/
+
 long long int exponenciacao_modular_rapida(long long int base, long long int expoente, long long int mod) {
     long long int n = base, k = expoente, d = mod;
     long long int resultado, pot;
@@ -265,6 +295,9 @@ long long int exponenciacao_modular_rapida(long long int base, long long int exp
 
     return resultado;
 }
+
+
+/*IMPLEMENTA UM MENU "INICIAL" PARA ESCOLHER A OPÇÃO DESEJADA*/
 
 void entrada() {
     while (1) {
@@ -304,3 +337,12 @@ void entrada() {
         }
     }
 }
+
+//FUNÇÃO PRINCIPAL DO PROGRAMA:CHAMA A FUNÇÃO ENTRADA, A QUAL CONTROLA O MENU DE OPÇÕES
+
+int main() 
+{
+    entrada();
+    return 0;
+}
+
