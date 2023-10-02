@@ -17,13 +17,14 @@
 *Yasmin Antonela Nascimento Oliveira*
 
 
+
 **Matemática Discreta**
 
 **UFAL - Universidade Federal de Alagoas**:
 
 **Professor: Bruno Pimentel**
 
-### Descrição do Projeto📰  
+## Descrição do Projeto📰  
 
 * Este projeto utiliza como base o método de criptografia RSA e a tabela ASCII para encriptar e desencriptar mensagens fornecidas pelo usuário através de operações matemáticas como aritmética modular, algoritmo de Euclides, etc. 
 
@@ -55,7 +56,7 @@
 * Algoritmo de Euclides;
 * Números primos;
 
-### Ferramentas utilizadas⚙️
+## Ferramentas utilizadas⚙️
 
 * Visual Studio Code
 * C
