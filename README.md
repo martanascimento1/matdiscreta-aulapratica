@@ -1,6 +1,6 @@
 # Matemática Discreta
 
-## Grupo:
+## Grupo🧑‍🤝‍🧑
 
 *Antônio Maria Cardoso Wagner*
 
@@ -19,7 +19,7 @@
 
 **Matemática Discreta**
 
-**UFAL - Universidade Federal de Alagoas**
+**UFAL - Universidade Federal de Alagoas**:
 
 **Professor: Bruno Pimentel**
 
@@ -41,5 +41,7 @@ Nesta opção o programa solicita a chave pública que foi gerada anteriormente 
 
 Nesta opção o programa solicita os valores "p", "q" e "e" que já foram usados anteriormente para a criação da chave pública. A mensagem desencriptada é salva num arquivo .txt.
 
-**4 - 
+**4 - Ver Mensagem Desencriptada👀**
+
+Ao selecionar esta opção a mensagem desencriptada é retornada para o usuário na CLI.
 
