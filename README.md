@@ -31,7 +31,9 @@ Este projeto utiliza criptografia RSA para encriptar e desencriptar mensagens fo
 
 **1 - Gerar Chave Pública🔑**
 
-Nessa opção o programa solicitará que o usuário insira dois numeros primos (p,q) e um outro inteiro positivo "e" que seja relativamente a (p-1)*(q-1). A partir disso é gerada uma chave pública que pode ser representada pelo par (n, e), onde n=p*q.
+Nesta opção o programa solicita que o usuário insira dois numeros primos (p,q) e um outro inteiro positivo "e" que seja relativamente primo a (p-1)*(q-1). A partir disso é criado um arquivo .txt contendo uma chave pública, a qual é representada pelo par (n, e), onde n=p*q. 
 
-2-
+**2 - Encriptar🔐**
+
+Nesta opção o programa solicita
 
