@@ -23,7 +23,7 @@
 
 **Professor: Bruno Pimentel**
 
-## Descrição do Projeto  
+## Descrição do Projeto📰  
 
 Este projeto utiliza criptografia RSA para encriptar e desencriptar mensagens fornecidas pelo usuário através de operações matemáticas como aritmética modular, algoritmo de Euclides, etc. 
 
