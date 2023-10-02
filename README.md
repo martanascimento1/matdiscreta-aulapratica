@@ -17,11 +17,8 @@
 *Yasmin Antonela Nascimento Oliveira*
 
 
-
+**Matemática Discreta**
 **UFAL - Universidade Federal de Alagoas**
-
-**Curso: Engenharia de Computação**
-
 **Professor: Bruno Pimentel**
 
 ## Descrição do Projeto
