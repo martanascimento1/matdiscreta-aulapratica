@@ -24,19 +24,8 @@
 
 **Professor: Bruno Pimentel**
 
-## Descrição
+## Descrição do Projeto
 
-Exercícios resolvidos com a linguagem C acerca dos conteúdos apresentados em sala de aula.
+Este projeto utiliza criptografia RSA para encriptar e desencriptar mensagens fornecidas pelo usuário através de operações matemáticas como aritmética modular, algoritmo de Euclides, etc. 
 
 
-**Lista de questões:**
-* [Questão 1](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao1.c)
-* [Questão 2](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao2.c)
-* [Questão 3](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao3.c)
-* [Questão 4](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao4.c)
-* [Questão 5](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao5.c)
-* [Questão 6](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao6.c)
-* [Questão 7](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao7.c)
-* [Questão 8]()
-* [Questão 9](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao9.c)
-* [Questão 10](https://github.com/martanascimento1/matdiscreta-aulapratica/blob/main/Questoes/questao10.c)
