@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRIPTOGRAFIA RSA</title>
+    <style>
+        body {
+            background-color: #dbe6ec; /* Cor de fundo da página */
+            font-family: 'Courier New', Courier, monospace; /* Fonte da letra */
+        }
+
+        h3, h2, h1 {
+            text-align: left;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+            font-weight: bold;
+            color: black;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #opcoesGerarChavePublica, #opcoesEncriptar, #opcoesDesencriptar {
+            display: none; /* Oculta os campos de entrada inicialmente */
+        }
+
+        .input-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRIPTOGRAFIA EM RSA - MATEMÁTICA DISCRETA</h1>
+    <h3>Equipe:<br>Antônio Maria Cardoso Wagner<br>Giovanna Alves Barbosa de Oliveira<br>Marta Mirely Nascimento dos Santos<br>Matheus Henrique Gomes de Oliveira<br>Paulo Sérgio Veras Carvalho<br>Vitória Maria Santana Bigi<br>Yasmim Antonela Nascimento Oliveira<br></h3>
+    <h2>Escolha uma opção:</h2>
+    <form>
+        <button type="button" value="gerarChavePublica" onclick="mostrarOpcoes('gerarChavePublica')">Gerar chave pública</button><br>
+        <button type="button" value="encriptar" onclick="mostrarOpcoes('encriptar')">Encriptar</button><br>
+        <button type="button" value="desencriptar" onclick="mostrarOpcoes('desencriptar')">Desencriptar</button><br>
+        <button type="button" value="verMensagemDesencriptada" onclick="verMensagemDesencriptada()">Ver Mensagem Desencriptada</button><br>
+    </form>
+
+    <div id="opcoesGerarChavePublica">
+        <h2>Gerar Chave Pública</h2>
+        <label class="input-label">Digite o número primo p:</label>
+        <input type="text" id="p"><br>
+        <label class="input-label">Digite o número primo q:</label>
+        <input type="text" id="q"><br>
+        <label class="input-label">Digite o expoente e:</label>
+        <input type="text" id="e"><br>
+        <button type="button" onclick="gerarChavePublica()">Gerar Chave</button>
+    </div>
+
+    <div id="opcoesEncriptar">
+        <h2>Encriptar</h2>
+        <label class="input-label">Digite a mensagem de texto a encriptar:</label>
+        <input type="text" id="mensagemEncriptar"><br>
+        <label class="input-label">Digite o valor de n (chave pública):</label>
+        <input type="text" id="nEncriptar"><br>
+        <label class="input-label">Digite o valor de e (chave pública):</label>
+        <input type="text" id="eEncriptar"><br>
+        <button type="button" onclick="encriptarMensagem()">Encriptar</button>
+    </div>
+    
+
+    <div id="opcoesDesencriptar">
+        <h2>Desencriptar</h2>
+        <label class="input-label">Digite o número primo p:</label>
+        <input type="text" id="pDesencriptar"><br>
+        <label class="input-label">Digite o número primo q:</label>
+        <input type="text" id="qDesencriptar"><br>
+        <label class="input-label">Digite o expoente e:</label>
+        <input type="text" id="eDesencriptar"><br>
+        <button type="button" onclick="desencriptarMensagem()">Desencriptar</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarOpcoes(opcao) {
+            // Oculta todas as opções
+            document.getElementById('opcoesGerarChavePublica').style.display = 'none';
+            document.getElementById('opcoesEncriptar').style.display = 'none';
+            document.getElementById('opcoesDesencriptar').style.display = 'none';
+    
+            // Mostra a opção selecionada
+            document.getElementById('resultado').innerHTML = ''; // Limpa a div de resultado
+            document.getElementById('opcoes' + opcao.charAt(0).toUpperCase() + opcao.slice(1)).style.display = 'block';
+        }
+    
+        function gerarChavePublica() {
+            // Chama a função em C
+        }
+    
+        function encriptarMensagem() {
+            var mensagem = document.getElementById('mensagemEncriptar').value;
+            var n = document.getElementById('nEncriptar').value;
+            var e = document.getElementById('eEncriptar').value;
+
+            if (!mensagem || !n || !e) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Chama a função em C 
+        }
+
+    
+        function desencriptarMensagem() {
+           // Chama a função em C
+        }
+
+        function verMensagemDesencriptada() {
+            // Chama a função em C 
+        }
+
+    </script>
+    
+</body>
+</html>
