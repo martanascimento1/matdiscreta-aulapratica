@@ -25,7 +25,7 @@
 
 ### Descrição do Projeto📰  
 
-* Este projeto utiliza criptografia RSA para encriptar e desencriptar mensagens fornecidas pelo usuário através de operações matemáticas como aritmética modular, algoritmo de Euclides, etc. 
+* Este projeto utiliza como base o método de criptografia RSA e a tabela ASCII para encriptar e desencriptar mensagens fornecidas pelo usuário através de operações matemáticas como aritmética modular, algoritmo de Euclides, etc. 
 
 **O funcionamento do programa possibilita que o usuário escolha entre 5 opções:**
 
@@ -49,10 +49,13 @@
 
 * Ao selecionar esta opção a execução do programa é encerrada.
 
-##Conceitos matemáticos utilizados:
+## Conceitos matemáticos utilizados:
 
+* Aritmética modular com base na tabela ASCII;
+* Algoritmo de Euclides;
+* Números primos;
 
-###Ferramentas utilizadas⚙️
+### Ferramentas utilizadas⚙️
 
 * Visual Studio Code
 * C
