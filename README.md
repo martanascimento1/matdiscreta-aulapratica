@@ -45,3 +45,7 @@ Nesta opção o programa solicita os valores "p", "q" e "e" que já foram usados
 
 Ao selecionar esta opção a mensagem desencriptada é retornada para o usuário na CLI.
 
+**5 - Sair🚪**
+
+Ao selecionar esta opção a execução do programa é encerrada.
+
